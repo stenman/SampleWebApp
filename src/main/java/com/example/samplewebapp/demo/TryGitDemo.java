@@ -26,10 +26,10 @@ public class TryGitDemo {
 //        
 //        System.out.println(customerDao.getAllCustomers().size());
 //        
-//        customerDao.insertCustomer(new Customer(1005, "Karl-Gustaf", "Bernadotte"));
+//        customerDao.insertCustomer(new Customer(1007, "Greger", "Persson"));
 //        System.out.println(customerDao.getCustomerCount());
 //        
-//        customerDao.insertCustomer(new Customer(1006, "Victoria", "Bernadotte"));
+//        customerDao.insertCustomer(new Customer(1008, "Davy", "Jones"));
 //        System.out.println(customerDao.getCustomerCount());
         
         
