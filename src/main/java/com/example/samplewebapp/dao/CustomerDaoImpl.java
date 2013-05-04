@@ -4,12 +4,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.sql.DataSource;
+
 import static org.jooq.impl.DSL.*;
 import org.jooq.DSLContext;
 import org.jooq.Param;
 import org.jooq.Query;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -22,8 +28,16 @@ import com.example.samplewebapp.domainmodel.Customer;
 @Repository
 public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements CustomerDao {
 
-	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);
+	@Inject
+	private DataSource dataSource;
 
+	@PostConstruct
+	private void initialize(){
+		setDataSource(dataSource);
+	}
+	
+	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);
+	
 	@Override
 	public int getCustomerCount() {
 		String sql = create.selectCount().from(tableByName("customer"))

@@ -18,8 +18,8 @@
 		<property name="password" value="sally" />
 	</bean>
 
-	<bean id="customerDaoImpl" class="com.example.samplewebapp.dao.CustomerDaoImpl">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
+<!-- 	<bean id="customerDaoImpl" class="com.example.samplewebapp.dao.CustomerDaoImpl"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 	</bean> -->
 
 </beans>
