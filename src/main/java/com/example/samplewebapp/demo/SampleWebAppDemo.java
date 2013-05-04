@@ -3,8 +3,6 @@ package com.example.samplewebapp.demo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.example.samplewebapp.dao.CustomerDaoImpl;
-import com.example.samplewebapp.domainmodel.Customer;
 import com.example.samplewebapp.service.SampleWebAppService;
 
 public class SampleWebAppDemo {

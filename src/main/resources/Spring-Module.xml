@@ -5,21 +5,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<context:annotation-config />
-
 	<context:component-scan base-package="com.example.samplewebapp" />
 
-	<!-- <import resource="database/Spring-Datasource.xml" /> -->
-
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
-		<property name="driverClass" value="org.postgresql.Driver" />
-		<property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/postgres" />
-		<property name="user" value="postgres" />
-		<property name="password" value="sally" />
-	</bean>
-
-<!-- 	<bean id="customerDaoImpl" class="com.example.samplewebapp.dao.CustomerDaoImpl"> -->
-<!-- 		<property name="dataSource" ref="dataSource" /> -->
-<!-- 	</bean> -->
+	<import resource="database/Spring-Datasource.xml" />
 
 </beans>

@@ -14,13 +14,10 @@ import org.jooq.Param;
 import org.jooq.Query;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.example.samplewebapp.domainmodel.Customer;
