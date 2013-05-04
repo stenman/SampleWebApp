@@ -20,8 +20,7 @@ import org.springframework.stereotype.Repository;
 import com.example.samplewebapp.domainmodel.Customer;
 
 @Repository
-public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements
-		CustomerDao {
+public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements CustomerDao {
 
 	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);
 
