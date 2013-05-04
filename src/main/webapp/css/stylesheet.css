@@ -1,0 +1,15 @@
+p {
+	font-family: fantasy;
+}
+
+#header {
+	width: 98%;
+	height: 60px;
+	background-color: black;
+	z-index: 1;
+	position: fixed;
+}
+
+.general_menu {
+	
+}
