@@ -1,4 +1,4 @@
-package com.example.samplewebapp.demo;
+package com.example.samplewebapp.web;
 
 import java.text.DateFormat;
 import java.util.Date;

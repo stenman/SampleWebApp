@@ -6,6 +6,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import static org.jooq.impl.DSL.*;
@@ -25,13 +28,32 @@ import com.example.samplewebapp.domainmodel.Customer;
 @Repository
 public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements CustomerDao {
 
-	@Inject
-	private DataSource dataSource;
-
+	
+	
+	
 	@PostConstruct
-	private void initialize(){
-		setDataSource(dataSource);
+	private void initialize() throws Exception{
+		InitialContext cxt = new InitialContext();
+		DataSource postgres_datasource = (DataSource) cxt.lookup( "java:/comp/env/jdbc/postgres_datasource" );
+		setDataSource(postgres_datasource);
 	}
+	
+//	@Inject
+//	private DataSource springDataSource;
+//
+//	@PostConstruct
+//	private void initialize(){
+//		setDataSource(springDataSource);
+//	}
+
+	
+//	@Inject
+//	private DataSource postgres_datasource;
+//
+//	@PostConstruct
+//	private void initialize(){
+//		setDataSource(postgres_datasource);
+//	}
 	
 	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);
 	
