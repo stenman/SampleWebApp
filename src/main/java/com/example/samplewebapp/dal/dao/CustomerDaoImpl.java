@@ -1,14 +1,11 @@
-package com.example.samplewebapp.dao;
+package com.example.samplewebapp.dal.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import static org.jooq.impl.DSL.*;
@@ -23,38 +20,18 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.example.samplewebapp.domainmodel.Customer;
+import com.example.samplewebapp.domain.model.Customer;
 
 @Repository
 public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements CustomerDao {
-
-	
-	
 	
 	@PostConstruct
 	private void initialize() throws Exception{
 		InitialContext cxt = new InitialContext();
-		DataSource postgres_datasource = (DataSource) cxt.lookup( "java:/comp/env/jdbc/postgres_datasource" );
+		DataSource postgres_datasource = (DataSource) cxt.lookup("java:/comp/env/jdbc/postgres_datasource");
 		setDataSource(postgres_datasource);
 	}
-	
-//	@Inject
-//	private DataSource springDataSource;
-//
-//	@PostConstruct
-//	private void initialize(){
-//		setDataSource(springDataSource);
-//	}
 
-	
-//	@Inject
-//	private DataSource postgres_datasource;
-//
-//	@PostConstruct
-//	private void initialize(){
-//		setDataSource(postgres_datasource);
-//	}
-	
 	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);
 	
 	@Override

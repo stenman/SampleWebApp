@@ -1,4 +1,4 @@
-package com.example.samplewebapp.domainmodel;
+package com.example.samplewebapp.domain.model;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.example.samplewebapp.dao.CustomerDao;
+import com.example.samplewebapp.dal.dao.CustomerDao;
 
 @Service
 public class Customer {

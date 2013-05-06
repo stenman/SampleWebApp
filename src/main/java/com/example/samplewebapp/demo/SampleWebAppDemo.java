@@ -3,7 +3,7 @@ package com.example.samplewebapp.demo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.example.samplewebapp.service.SampleWebAppService;
+import com.example.samplewebapp.domain.service.SampleWebAppService;
 
 public class SampleWebAppDemo {
 

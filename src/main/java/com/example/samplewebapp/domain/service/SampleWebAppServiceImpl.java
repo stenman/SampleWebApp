@@ -1,4 +1,4 @@
-package com.example.samplewebapp.service;
+package com.example.samplewebapp.domain.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.example.samplewebapp.domainmodel.Customer;
+import com.example.samplewebapp.domain.model.Customer;
 
 @Service
 public class SampleWebAppServiceImpl implements SampleWebAppService{

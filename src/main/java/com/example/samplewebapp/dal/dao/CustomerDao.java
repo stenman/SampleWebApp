@@ -1,8 +1,8 @@
-package com.example.samplewebapp.dao;
+package com.example.samplewebapp.dal.dao;
 
 import java.util.List;
 
-import com.example.samplewebapp.domainmodel.Customer;
+import com.example.samplewebapp.domain.model.Customer;
 
 public interface CustomerDao {
 	public int getCustomerCount();

@@ -1,8 +1,8 @@
-package com.example.samplewebapp.service;
+package com.example.samplewebapp.domain.service;
 
 import java.util.List;
 
-import com.example.samplewebapp.domainmodel.Customer;
+import com.example.samplewebapp.domain.model.Customer;
 
 public interface SampleWebAppService {
 	public int fetchCustomerCount();
