@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
@@ -25,11 +26,21 @@ import com.example.samplewebapp.domain.model.Customer;
 @Repository
 public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements CustomerDao {
 	
+	private static final String jndiEnvironment = "java:comp/env";
+	private static final String jndiResource = "jdbc/sample_webapp_datasource";
+	
+	//TODO: Use enums or constants for database tables and fields?
+	//TODO: This DAO knows of above layer (model: TransactionType). Refactor to generic objects?
+	//TODO: Add and verify error handling
+	//TODO: Add logging
+	//TODO: Test!
+	
 	@PostConstruct
 	private void initialize() throws Exception{
-		InitialContext cxt = new InitialContext();
-		DataSource postgres_datasource = (DataSource) cxt.lookup("java:/comp/env/jdbc/postgres_datasource");
-		setDataSource(postgres_datasource);
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context) initCtx.lookup(jndiEnvironment);
+		DataSource dataSource = (DataSource) envCtx.lookup(jndiResource);
+		setDataSource(dataSource);
 	}
 
 	DSLContext create = DSL.using(this.getDataSource(), SQLDialect.POSTGRES);

@@ -8,8 +8,38 @@ p {
 	background-color: black;
 	z-index: 1;
 	position: fixed;
+	margin-top: -10px;
+	margin-bottom: 10px;
 }
 
-.general_menu {
-	
+#header_div_1 p {
+	color: white;
+	float: left;
+	margin-left: 10px;
+}
+
+#header_div_2 {
+	z-index: 2;
+	height: 60px;
+	width: 450px;
+	background-color: orange;
+	float: right;
+}
+
+#header_div_2>p {
+	color: gray;
+	margin-right: 10px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.test_area {
+	float: left;
+	border-radius: 10px;
+	background-color: ff3333;
+	padding: 10px;
+	height: 200;
+	width: 40%;
+	margin-top: 60px;
+	margin-bottom: 10px;
 }

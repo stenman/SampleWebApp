@@ -38,6 +38,7 @@
 	</servlet-mapping>
 
 	<!-- Database connection definition -->
+	<!-- The datasource reference is kept here for documentation purposes -->
 	<!-- <resource-ref> -->
 	<!-- <description>postgreSQL Datasource</description> -->
 	<!-- <res-ref-name>jdbc/postgres_dataSource</res-ref-name> -->
