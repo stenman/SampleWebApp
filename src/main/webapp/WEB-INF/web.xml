@@ -7,6 +7,9 @@
 		<welcome-file>home.html</welcome-file>
 		<welcome-file>home.htm</welcome-file>
 		<welcome-file>home.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!-- The definition of the Root Spring Container shared by all Servlets 
