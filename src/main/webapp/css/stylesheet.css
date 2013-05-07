@@ -1,18 +1,19 @@
-p {
-	font-family: fantasy;
+body {
+	background-color: white;
 }
 
+/* HEADER */
 #header {
-	width: 98%;
+	position: fixed;
+	width: 99%;
 	height: 60px;
 	background-color: black;
 	z-index: 1;
-	position: fixed;
-	margin-top: -10px;
-	margin-bottom: 10px;
+	top: 0px;
 }
 
 #header_div_1 p {
+	font-family: fantasy;
 	color: white;
 	float: left;
 	margin-left: 10px;
@@ -27,19 +28,46 @@ p {
 }
 
 #header_div_2>p {
-	color: gray;
+	font-family: fantasy;
+	color: black;
 	margin-right: 10px;
 	margin-left: 10px;
 	vertical-align: middle;
 }
 
-.test_area {
+/* LEFT MENU */
+#left_menu {
 	float: left;
 	border-radius: 10px;
-	background-color: ff3333;
+	background-color: black;
 	padding: 10px;
-	height: 200;
-	width: 40%;
+	height: 500;
+	width: auto;
 	margin-top: 60px;
-	margin-bottom: 10px;
+}
+
+.sub_menu {
+	background-color: orange;
+	margin: 0px 0px 0px 0px;
+}
+
+.slide_sub_menu {
+	background-color: orange;
+	margin: 0px 0px 0px 0px;
+}
+
+.fade_sub_menu {
+	background-color: orange;
+	margin: 0px 0px 0px 0px;
+}
+
+/* APM CONTENT */
+#apm_content {
+	float: right;
+	border-radius: 10px;
+	background-color: #aabbcc;
+	padding: 10px;
+	height: 700;
+	width: 1630px;
+	margin-top: 60px;
 }
