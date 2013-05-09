@@ -6,8 +6,8 @@
 <head>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javaScript" src="../../scripts/script.js"></script>
-<link type="text/css" rel="stylesheet" href="css/stylesheet.css" />
+<script type="text/javaScript" src="../../resources/scripts/script.js"></script>
+<link type="text/css" rel="stylesheet" href="resources/css/stylesheet.css" />
 <title>Home</title>
 </head>
 

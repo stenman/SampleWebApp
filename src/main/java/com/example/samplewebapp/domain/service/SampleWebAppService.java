@@ -7,8 +7,6 @@ import com.example.samplewebapp.domain.model.Customer;
 public interface SampleWebAppService {
 	public int fetchCustomerCount();
 	
-	public String fetchCustomerFirstName(int id);
-	
 	public Customer fetchCustomer(int id);
 	
 	public List<Customer> fetchAllCustomers();

@@ -6,36 +6,32 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.example.samplewebapp.dal.dao.CustomerDao;
 import com.example.samplewebapp.domain.model.Customer;
 
 @Service
 public class SampleWebAppServiceImpl implements SampleWebAppService{
 
 	@Inject
-	private Customer customer;
+	private CustomerDao customerDao;
 
 	@Override
 	public int fetchCustomerCount() {
-		return this.customer.getCustomerCount();
-	}
-
-	@Override
-	public String fetchCustomerFirstName(int id) {
-		return this.customer.getCustomerDescription(id);
+		return customerDao.getCustomerCount();
 	}
 
 	@Override
 	public Customer fetchCustomer(int id) {
-		return this.customer.getCustomer(id);
+		return customerDao.getCustomer(id);
 	}
 
 	@Override
 	public List<Customer> fetchAllCustomers() {
-		return this.customer.getAllCustomers();
+		return customerDao.getAllCustomers();
 	}
 
 	@Override
 	public void addCustomer(Customer customer) {
-		this.customer.insertCustomer(customer);
+		customerDao.insertCustomer(customer);
 	}
 }

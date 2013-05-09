@@ -15,6 +15,7 @@ import org.jooq.Param;
 import org.jooq.Query;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
+
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -63,19 +64,6 @@ public class CustomerDaoImpl extends NamedParameterJdbcDaoSupport implements Cus
 				paramId.getName(), id);
 		return this.getNamedParameterJdbcTemplate().queryForObject(sql,
 				namedParameters, new CustomerMapper());
-	}
-
-	@Override
-	public String getCustomerFirstName(int id) {
-		Query query = create.select(fieldByName("first_name"))
-				.from(tableByName("customer"))
-				.where(fieldByName("id").equal(param("id", id)));
-		String str = create.renderNamedParams(query);
-		Param<?> paramId = query.getParam("id");
-		SqlParameterSource namedParameters = new MapSqlParameterSource(
-				paramId.getName(), id);
-		return this.getNamedParameterJdbcTemplate().queryForObject(str,
-				namedParameters, String.class);
 	}
 
 	@Override

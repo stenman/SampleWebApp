@@ -16,8 +16,6 @@ public class SampleWebAppDemo {
  
         System.out.println(customer.fetchCustomerCount());
 
-        System.out.println(customer.fetchCustomerFirstName(1000));
-        
 //        Customer customer1 = customer.fetchCustomer(1001);
 //        System.out.println(customer1.getId());
 //        System.out.println(customer1.getFirstName());
