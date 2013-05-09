@@ -38,6 +38,9 @@
 
 	<!-- TODO: REMOVE THIS! TESTING THE CONTROLLER -->
 
+	<a href="http://localhost:9090/sample-web-app/">RESET</a>
+	<br><br><br>
+	
 	<form name="test_form_1" action="customer1" method="GET">
 		<div>
 			<label for="lbl_name">Say Hello</label> <input
