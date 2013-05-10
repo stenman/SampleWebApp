@@ -4,11 +4,15 @@
 <html>
 
 <head>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javaScript" src="../../resources/scripts/script.js"></script>
-<link type="text/css" rel="stylesheet" href="resources/css/stylesheet.css" />
-<title>Home</title>
+<title>Sample Web App Home</title>
+
+<!--jQuery dependencies-->
+<!-- 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+
+<!-- Static files -->
+<!-- 	<script type="text/javaScript" src="resources/scripts/script.js"></script> -->
+
+<link type="text/css" rel="stylesheet"	href="resources/css/stylesheet.css" />
 </head>
 
 <body>

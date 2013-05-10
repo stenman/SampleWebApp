@@ -2,6 +2,7 @@ body {
 	background-color: white;
 }
 
+
 /* HEADER */
 #header {
 	position: fixed;
@@ -35,6 +36,7 @@ body {
 	vertical-align: middle;
 }
 
+
 /* LEFT MENU */
 #left_menu {
 	float: left;
@@ -61,13 +63,36 @@ body {
 	margin: 0px 0px 0px 0px;
 }
 
+
 /* APM CONTENT */
+#apm_content > p, h3 {
+		margin: 0px 0px 0px 0px;
+}
+
 #apm_content {
+	position: relative;
 	float: right;
 	border-radius: 10px;
 	background-color: #aabbcc;
 	padding: 10px;
-	height: 700;
+	height: 700px;
 	width: 1630px;
 	margin-top: 60px;
 }
+
+#apm_form {
+	float: left;
+	border-radius: 10px;
+	background-color: #ccccaa;
+	padding: 10px;
+	height: 580px;
+	width: 350px;
+}
+
+/* APM CONTENT > GRID ARRAY */
+#grid_array {
+	position: absolute;
+	margin: 0px 400px;
+	float: right;
+}
+
