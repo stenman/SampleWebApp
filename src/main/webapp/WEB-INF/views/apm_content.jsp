@@ -1,24 +1,20 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <head>
-<!--jQuery dependencies-->
-<link rel="stylesheet"
-	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script
-	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-<!--ParamQuery Grid files-->
-<link rel="stylesheet" href="resources/css/pqgrid_css/pqgrid.min.css" />
-<script type="text/javascript"
-	src="resources/scripts/pqgrid_js/pqgrid.min.js" /></script>
-
-<!--ParamQuery Grid Office theme-->
-<link rel="stylesheet"
-	href="resources/css/pqgrid_themes/office/pqgrid.css" />
-
-<!-- ParamQuery Grid Tables -->
-<script type="text/javascript" src="resources/scripts/testing_pqgrid.js" /></script>
+	<!--jQuery dependencies-->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	
+	<!--ParamQuery Grid files-->
+	<link rel="stylesheet" href="resources/css/pqgrid_css/pqgrid.min.css" />
+	<script type="text/javascript" src="resources/scripts/pqgrid_js/pqgrid.min.js" /></script>
+	
+	<!--ParamQuery Grid Office theme-->
+	<link rel="stylesheet" href="resources/css/pqgrid_themes/office/pqgrid.css" />
+	
+	<!-- ParamQuery Grid Tables -->
+	<script type="text/javascript" src="resources/scripts/testing_pqgrid.js" /></script>
 </head>
 
 <div id="apm_content">

@@ -46,6 +46,7 @@ body {
 	height: 500;
 	width: auto;
 	margin-top: 60px;
+	clear: both;
 }
 
 .sub_menu {
@@ -76,10 +77,11 @@ body {
 	background-color: #aabbcc;
 	padding: 10px;
 	height: 700px;
-	width: 1630px;
+	width: 1650px;
 	margin-top: 60px;
 }
 
+/* APM CONTENT > FORM */
 #apm_form {
 	float: left;
 	border-radius: 10px;
@@ -87,12 +89,11 @@ body {
 	padding: 10px;
 	height: 580px;
 	width: 350px;
+	margin-right: 10px;
+/* 	clear:both; */
 }
 
 /* APM CONTENT > GRID ARRAY */
-#grid_array {
-	position: absolute;
-	margin: 0px 400px;
-	float: right;
-}
+/* #grid_array { */
+/* } */
 
