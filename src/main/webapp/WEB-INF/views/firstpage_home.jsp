@@ -18,6 +18,6 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="left_menu.jsp" />
-	<jsp:include page="apm_content.jsp" />
+	<jsp:include page="firstpage_content.jsp" />
 </body>
 </html>

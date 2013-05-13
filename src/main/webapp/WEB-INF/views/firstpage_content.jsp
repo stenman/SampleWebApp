@@ -17,30 +17,30 @@
 	<script type="text/javascript" src="resources/scripts/testing_pqgrid.js" /></script>
 </head>
 
-<div id="apm_content">
+<div id="firstpage_content">
 	<h3>Test Area</h3>
 
 	<a href="http://localhost:9090/sample-web-app/">RESET</a> <br> <br>
 
-	<div id="apm_form">
-		<form name="test_form_1" action="customer1" method="GET">
+	<div id="firstpage_form">
+		<form name="test_form_1" action="sayHello" method="GET">
 			<div>
 				<label for="lbl_name">Say Hello</label> <input
 					id="btn_submit_test_form" type="submit" value="Go" />
 			</div>
 		</form>
 
-		<form name="test_form_2" action="customer2" method="GET">
+		<form name="test_form_2" action="getCustomerId" method="GET">
 			<div>
-				<label for="lbl_name">Transaction ID</label> <input id="lbl_name"
+				<label for="lbl_name">Customer ID</label> <input id="lbl_name"
 					name="lbl_name" type="text" value="1001"
-					title="Input Transaction ID" /> <input id="btn_submit_test_form"
+					title="Input Customer ID" /> <input id="btn_submit_test_form"
 					type="submit" value="Go" />
 			</div>
 		</form>
 
 		<form:form name="test_form_3" modelAttribute="customer"
-			action="customer3" method="POST">
+			action="submitForm" method="POST">
 			<div>
 				<table>
 					<tr>

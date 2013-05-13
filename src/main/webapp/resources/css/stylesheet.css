@@ -15,7 +15,7 @@ body {
 
 #header_div_1 p {
 	font-family: fantasy;
-	color: white;
+	color: orange;
 	float: left;
 	margin-left: 10px;
 }
@@ -66,11 +66,11 @@ body {
 
 
 /* APM CONTENT */
-#apm_content > p, h3 {
+#firstpage_content > p, h3 {
 		margin: 0px 0px 0px 0px;
 }
 
-#apm_content {
+#firstpage_content {
 	position: relative;
 	float: right;
 	border-radius: 10px;
@@ -82,7 +82,7 @@ body {
 }
 
 /* APM CONTENT > FORM */
-#apm_form {
+#firstpage_form {
 	float: left;
 	border-radius: 10px;
 	background-color: #ccccaa;

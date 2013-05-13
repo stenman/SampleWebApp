@@ -28,13 +28,13 @@ public class CustomerController {
 		this.sampleWebAppService = sampleWebAppService;
 	}
 
-	@RequestMapping(value = "/customer1", method = RequestMethod.GET)
+	@RequestMapping(value = "/sayHello", method = RequestMethod.GET)
 	public String sayHello(ModelMap model) {
 		model.addAttribute("message1", "Hello!!!");
-		return "home";
+		return "firstpage_home";
 	}
 
-	@RequestMapping(value = "/customer2", method = RequestMethod.GET)
+	@RequestMapping(value = "/getCustomerId", method = RequestMethod.GET)
 	public String showCustomer(@RequestParam("lbl_name") int customerId,
 			ModelMap model) {
 
@@ -43,19 +43,17 @@ public class CustomerController {
 		model.addAttribute("message2",
 				customer.getFirstName() + " " + customer.getLastName());
 
-		return "home";
+		return "firstpage_home";
 	}
 
-	// @ModelAttribute("customer")
-	// public Customer getCustomer() {
-	// return new Customer();
-	// }
+	@ModelAttribute("customer")
+	public Customer getCustomerObject() {
+		return new Customer();
+	}
 
-	//TODO: Try finding a better way of mapping the "landing page"
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String showCustomerForm(ModelMap model) {
-		model.addAttribute("customer", new Customer());
-		return "home";
+	@RequestMapping(method = RequestMethod.GET)
+	public String handleRequest() {
+		return "firstpage_home";
 	}
 
 	@RequestMapping(value = "/customer3", method = RequestMethod.POST)
@@ -67,6 +65,6 @@ public class CustomerController {
 		 model.addAttribute("customer", customer);
 		 model.addAttribute("message3", "Customer Added!");
 
-		return "home";
+		return "firstpage_home";
 	}
 }
