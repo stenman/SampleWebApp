@@ -1,5 +1,9 @@
 package com.example.samplewebapp.presentation.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -52,7 +56,12 @@ public class CustomerController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String handleRequest() {
+	public String handleRequest(Locale locale, ModelMap model) {
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		String formattedDate = dateFormat.format(date);
+		model.addAttribute("serverTime", formattedDate ); 
+
 		return "firstpage_home";
 	}
 
