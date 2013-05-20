@@ -29,7 +29,6 @@ public class CustomerController {
 
 	@Inject
 	public void setSampleWebAppService(SampleWebAppService sampleWebAppService) {
-		System.out.println("CustomerController/setSampleWebAppService");
 		this.sampleWebAppService = sampleWebAppService;
 	}
 
@@ -38,48 +37,34 @@ public class CustomerController {
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate ); 
-
-		System.out.println("CustomerController/handleRequest");
+		model.addAttribute("serverTime", formattedDate);
 		return "firstpage_home";
 	}
 
 	@RequestMapping(value = "/sayHello", method = RequestMethod.GET)
 	public String sayHello(ModelMap model) {
 		model.addAttribute("message1", "Hello!!!");
-		System.out.println("CustomerController/sayHello");
 		return "firstpage_home";
 	}
 
 	@RequestMapping(value = "/getCustomerId", method = RequestMethod.GET)
-	public String showCustomer(@RequestParam("lbl_name") int customerId,
-			ModelMap model) {
-
+	public String showCustomer(@RequestParam("lbl_name") int customerId, ModelMap model) {
 		Customer customer = sampleWebAppService.fetchCustomer(customerId);
-
-		model.addAttribute("message2",
-				customer.getFirstName() + " " + customer.getLastName());
-
-		System.out.println("CustomerController/getCustomerId");
+		model.addAttribute("message2", customer.getFirstName() + " " + customer.getLastName());
 		return "firstpage_home";
 	}
 
 	@ModelAttribute("customer")
 	public Customer getCustomerObject() {
-		System.out.println("CustomerController/getCustomerObject");
 		return new Customer();
 	}
 
 	@RequestMapping(value = "/customer3", method = RequestMethod.POST)
-	public String onSubmitCustomerForm(
-			@ModelAttribute("customer") Customer customer,
-			BindingResult result, ModelMap model) {
-
-		 sampleWebAppService.addCustomer(customer);
-		 model.addAttribute("customer", customer);
-		 model.addAttribute("message3", "Customer Added!");
-
-			System.out.println("CustomerController/onSubmitCustomerForm");
+	public String onSubmitCustomerForm(@ModelAttribute("customer") Customer customer, BindingResult result,
+			ModelMap model) {
+		sampleWebAppService.addCustomer(customer);
+		model.addAttribute("customer", customer);
+		model.addAttribute("message3", "Customer Added!");
 		return "firstpage_home";
 	}
 }
