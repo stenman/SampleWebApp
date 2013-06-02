@@ -14,12 +14,14 @@
 	<!-- Enable component-scan only on needed resources to prevent unwanted 
 		behavior in Transaction Management -->
 	<context:component-scan base-package="com.example.samplewebapp.dal" />
-	<context:component-scan	base-package="com.example.samplewebapp.domain.service" />
+	<context:component-scan base-package="com.example.samplewebapp.domain.service" />
 
 	<!-- enable the configuration of transactional behavior based on annotations -->
 	<tx:annotation-driven />
 
-	<!-- Enable Spring to automatically discover the underlying JTA implementation. -->
+	<!-- Enable Spring to automatically discover the underlying JTA implementation. 
+		Use this when running on application server (like JBoss or WAS) or if running 
+		on servlet container with third party TM (like Tomcat with Atomikos). -->
 	<!-- <tx:jta-transaction-manager /> -->
 
 	<!-- This will not be needed when using an underlying JTA implementation 
