@@ -21,7 +21,7 @@ import com.example.samplewebapp.domain.service.SampleWebAppService;
 /**
  * Handles requests for the application home page.
  */
-@SessionAttributes("customer")
+@SessionAttributes({"customer", "message5"})
 @Controller
 public class CustomerController {
 
@@ -32,6 +32,11 @@ public class CustomerController {
 		this.sampleWebAppService = sampleWebAppService;
 	}
 
+	@ModelAttribute("customer")
+	public Customer getCustomerObject() {
+		return new Customer();
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String handleRequest(Locale locale, ModelMap model) {
 		Date date = new Date();
@@ -43,28 +48,32 @@ public class CustomerController {
 
 	@RequestMapping(value = "/sayHello", method = RequestMethod.GET)
 	public String sayHello(ModelMap model) {
-		model.addAttribute("message1", "Hello!!!");
+		model.addAttribute("message1", "Hello Accounting Manager!");
+		model.addAttribute("message5", "A session attribute");
+		model.addAttribute("message6", "Not a session attribute");
+		return "firstpage_home";
+	}
+	
+	@RequestMapping(value = "/getCustomerCount", method = RequestMethod.GET)
+	public String fetchCustomerCount(ModelMap model) {
+		int transactionTypeCount = sampleWebAppService.fetchCustomerCount();
+		model.addAttribute("message2", transactionTypeCount);
 		return "firstpage_home";
 	}
 
-	@RequestMapping(value = "/getCustomerId", method = RequestMethod.GET)
+	@RequestMapping(value = "/getCustomers", method = RequestMethod.GET)
 	public String showCustomer(@RequestParam("lbl_name") int customerId, ModelMap model) {
 		Customer customer = sampleWebAppService.fetchCustomer(customerId);
-		model.addAttribute("message2", customer.getFirstName() + " " + customer.getLastName());
+		model.addAttribute("message3", customer.getFirstName() + " " + customer.getLastName());
 		return "firstpage_home";
 	}
 
-	@ModelAttribute("customer")
-	public Customer getCustomerObject() {
-		return new Customer();
-	}
-
-	@RequestMapping(value = "/customer3", method = RequestMethod.POST)
+	@RequestMapping(value = "/submitForm", method = RequestMethod.POST)
 	public String onSubmitCustomerForm(@ModelAttribute("customer") Customer customer, BindingResult result,
 			ModelMap model) {
 		sampleWebAppService.addCustomer(customer);
 		model.addAttribute("customer", customer);
-		model.addAttribute("message3", "Customer Added!");
+		model.addAttribute("message4", "Customer Added!");
 		return "firstpage_home";
 	}
 }
